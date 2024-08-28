@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import { LoaderComponents } from "../components";
-import { Island, Sky } from "../models";
+import { Bird, Island, Plane, Sky } from "../models";
 
 
 const HomePages = () => {
@@ -25,7 +25,7 @@ const HomePages = () => {
       </div> */}
       <Canvas
         className=" w-full h-screen bg-transparent"
-        camera={{ near: 0.1, far: 1000, position: [0, 0, 1] }}
+        camera={{ near: 0.1, far: 1000,  }}
       >
         <Suspense fallback={<LoaderComponents />}>
           <directionalLight position={[10, 10, 1]} intensity={1.5} />
@@ -34,11 +34,13 @@ const HomePages = () => {
           <spotLight />
           <hemisphereLight skyColor="#b1e1f1" groundColor="#000000" intensity={1} />
           <Sky/>
+          <Bird/>
           <Island
             scale={islandScale}
             position={islandPosition}
             rotation={islandRotation}
           />
+          <Plane/>
         </Suspense>
       </Canvas>
     </section>
