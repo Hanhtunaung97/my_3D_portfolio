@@ -1,7 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense } from "react";
 import { LoaderComponents } from "../components";
-import { Island } from "../models";
+import { Island, Sky } from "../models";
 
 
 const HomePages = () => {
@@ -33,6 +33,7 @@ const HomePages = () => {
           <pointLight />
           <spotLight />
           <hemisphereLight skyColor="#b1e1f1" groundColor="#000000" intensity={1} />
+          <Sky/>
           <Island
             scale={islandScale}
             position={islandPosition}
