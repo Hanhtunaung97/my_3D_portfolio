@@ -5,6 +5,7 @@ import { Bird, Island, Plane, Sky } from "../models";
 
 const HomePages = () => {
   const [isRotation, setIsRotation] = useState(false);
+  const [currentStage,setCurrentStage]=useState(1);
   const adjustIslandScreenSize = () => {
     let screenScale = null;
     let screenPosition = [0, -6.5, -43];
@@ -38,7 +39,7 @@ const HomePages = () => {
       </div> */}
       <Canvas
         className={` w-full h-screen bg-transparent ${
-          isRotation ? "cursor-grabbing" : "cursor-grab"
+          isRotation ? "cursor-grabbing" : "cursor-grab "
         }`}
         camera={{ near: 0.1, far: 1000 }}
       >
@@ -52,13 +53,13 @@ const HomePages = () => {
             groundColor="#000000"
             intensity={1}
           />
-          <Sky />
+          <Sky isRotation={isRotation} />
           <Bird />
           <Plane
           scale={planeScale}
           position={planePosition}
           isRotation={isRotation}
-          rotation={[0, 90, 0]}
+          rotation={[0, 20, 0]}
            />
           <Island
             scale={islandScale}
@@ -66,6 +67,7 @@ const HomePages = () => {
             rotation={islandRotation}
             isRotation={isRotation}
             setIsRotation={setIsRotation}
+            setCurrentStage={setCurrentStage}
           />
           
         </Suspense>
