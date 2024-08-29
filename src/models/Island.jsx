@@ -64,6 +64,7 @@ const Island = ({ isRotation, setIsRotation, setCurrentStage, ...props }) => {
       setIsRotation(false);
     }
   };
+
   const handleMouseWheel = (e) => {
     e.stopPropagation();
     e.preventDefault();
@@ -77,31 +78,31 @@ const Island = ({ isRotation, setIsRotation, setCurrentStage, ...props }) => {
   const handleTouchStart = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    setIsRotating(true);
-  
+    setIsRotation(true);
+
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     lastX.current = clientX;
-  }
-  
+  };
+
   const handleTouchEnd = (e) => {
     e.stopPropagation();
     e.preventDefault();
-    setIsRotating(false);
-  }
-  
+    setIsRotation(false);
+  };
+
   const handleTouchMove = (e) => {
     e.stopPropagation();
     e.preventDefault();
-  
-    if (isRotating) {
+
+    if (isRotation) {
       const clientX = e.touches ? e.touches[0].clientX : e.clientX;
       const delta = (clientX - lastX.current) / viewport.width;
-  
+
       islandRef.current.rotation.y += delta * 0.01 * Math.PI;
       lastX.current = clientX;
       rotationSpeed.current = delta * 0.01 * Math.PI;
     }
-  }
+  };
   useFrame(() => {
     if (!isRotation) {
       rotationSpeed.current *= dampingFactor;
@@ -141,6 +142,7 @@ const Island = ({ isRotation, setIsRotation, setCurrentStage, ...props }) => {
     canvas.addEventListener("wheel", handleMouseWheel);
     canvas.addEventListener("touchstart", handleTouchStart);
     canvas.addEventListener("touchend", handleTouchEnd);
+    canvas.addEventListener("touchmove", handleTouchMove);
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("keyup", handleKeyUp);
     return () => {
@@ -150,6 +152,7 @@ const Island = ({ isRotation, setIsRotation, setCurrentStage, ...props }) => {
       canvas.removeEventListener("wheel", handleMouseWheel);
       canvas.removeEventListener("touchstart", handleTouchStart);
       canvas.removeEventListener("touchend", handleTouchEnd);
+      canvas.removeEventListener("touchmove", handleTouchMove);
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };

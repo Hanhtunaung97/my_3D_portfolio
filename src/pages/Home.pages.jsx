@@ -1,11 +1,11 @@
 import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useState } from "react";
-import { LoaderComponents } from "../components";
+import { HomeInfoComponents, LoaderComponents } from "../components";
 import { Bird, Island, Plane, Sky } from "../models";
 
 const HomePages = () => {
   const [isRotation, setIsRotation] = useState(false);
-  const [currentStage,setCurrentStage]=useState(1);
+  const [currentStage, setCurrentStage] = useState(1);
   const adjustIslandScreenSize = () => {
     let screenScale = null;
     let screenPosition = [0, -6.5, -43];
@@ -29,14 +29,14 @@ const HomePages = () => {
     }
     return [screenScale, screenPosition];
   };
-  const [planeScale, planePosition]=adjustPlaneScreenSize()
+  const [planeScale, planePosition] = adjustPlaneScreenSize();
   const [islandScale, islandPosition, islandRotation] =
     adjustIslandScreenSize();
   return (
     <section className="w-full h-screen relative">
-      {/* <div className=' absolute left-0 right-0 top-28 flex justify-center items-center z-10'>
-        POPUP
-      </div> */}
+      <div className=" absolute left-0 right-0 top-28 flex justify-center items-center z-10">
+        {currentStage && <HomeInfoComponents currentStage={currentStage} />}
+      </div>
       <Canvas
         className={` w-full h-screen bg-transparent ${
           isRotation ? "cursor-grabbing" : "cursor-grab "
@@ -56,11 +56,11 @@ const HomePages = () => {
           <Sky isRotation={isRotation} />
           <Bird />
           <Plane
-          scale={planeScale}
-          position={planePosition}
-          isRotation={isRotation}
-          rotation={[0, 20, 0]}
-           />
+            scale={planeScale}
+            position={planePosition}
+            isRotation={isRotation}
+            rotation={[0, 20, 0]}
+          />
           <Island
             scale={islandScale}
             position={islandPosition}
@@ -69,7 +69,6 @@ const HomePages = () => {
             setIsRotation={setIsRotation}
             setCurrentStage={setCurrentStage}
           />
-          
         </Suspense>
       </Canvas>
     </section>
