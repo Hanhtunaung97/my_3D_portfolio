@@ -7,7 +7,7 @@ const NavbarComponents = () => {
       <NavLink
         to={"/"}
         className={
-          "w-10 h-10 bg-white shadow-md flex justify-center items-center rounded-lg font-bold font-heading"
+          "w-10 h-10 bg-white shadow-md flex justify-center items-center rounded-lg font-bold font-heading hover:-translate-y-0.5 hover:shadow-xl hover:scale-105 transition-all"
         }
       >
         <p className="blue-gradient_text">TH</p>
