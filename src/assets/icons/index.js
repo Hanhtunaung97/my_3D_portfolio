@@ -26,8 +26,22 @@ import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
 import soundoff from './soundoff.png'
+import pgsql from './pgsql.svg';
+import php from './php.svg';
+import bootstrap from './bootstrap.svg';
+import laravel from "./laravel.svg";
+import shadcn from "./shadcn.svg";
+import vite from "./vite.svg";
+import zustand from './zustand.svg';
 
 export {
+    vite,
+    zustand,
+    shadcn,
+    bootstrap,
+    laravel,
+    pgsql,
+    php,
     css,
     express,
     git,
