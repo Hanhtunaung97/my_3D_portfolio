@@ -1,7 +1,13 @@
-import React, { useRef, useState } from "react";
+import React, { Suspense, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { Canvas } from "@react-three/fiber";
+import { AlertComponents, LoaderComponents } from "../components";
+import Fox from "../models/Fox";
+import UseAlert from "../hook/UseAlert";
 const ContactPages = () => {
   const formRef = useRef(null);
+  const [currentAnimation, setCurrentAnimation] = useState("idle");
+  const { alert, showAlert, hideAlert } = UseAlert();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -11,11 +17,16 @@ const ContactPages = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-  const handleFocus = (e) => {};
-  const handleBlur = (e) => {};
+  const handleFocus = (e) => {
+    setCurrentAnimation("walk");
+  };
+  const handleBlur = (e) => {
+    setCurrentAnimation("idle");
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSent(true);
+    setCurrentAnimation("hit");
     emailjs
       .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -31,19 +42,35 @@ const ContactPages = () => {
       )
       .then(() => {
         setIsSent(false);
-        setForm({
-          name: "",
-          email: "",
-          message: "",
+        showAlert({
+          show: true,
+          text: "Your message has been sent successfully. Thank you for contacting me!",
+          type: "success",
         });
+        setTimeout(() => {
+          setCurrentAnimation("idle");
+          setForm({
+            name: "",
+            email: "",
+            message: "",
+          });
+        }, 3000);
       })
       .catch((e) => {
         setIsSent(false);
+        showAlert({
+          show: true,
+          text: "Oops! Something went wrong. I didn't receive your email.",
+          type: "danger",
+        });
+        setCurrentAnimation("idle");
         console.log(e);
       });
   };
   return (
     <section className="flex flex-col lg:flex-row max-container relative">
+      {alert.show && <AlertComponents {...alert} />}
+      {/* <AlertComponents text={"Your message has been sent successfully. Thank you for contacting me!"} /> */}
       <div className="flex flex-col flex-1  min-w-[50%]">
         <h1 className=" head-text">Get In Touch</h1>
         <form
@@ -114,6 +141,22 @@ const ContactPages = () => {
             {isSent ? "Sending..." : "Send Message"}
           </button>
         </form>
+      </div>
+      <div className="w-full lg:w-1/2 h-[350px] md:h-[500px] lg:h-auto">
+        <Canvas camera={{ position: [0, 0, 5], fov: 75, near: 0.1, far: 1000 }}>
+          <Suspense fallback={<LoaderComponents />}>
+            <directionalLight position={[0, 0, 1]} intensity={2} />
+            <ambientLight intensity={0.5} />
+            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+            <pointLight position={[-10, -10, -10]} />
+            <Fox
+              currentAnimation={currentAnimation}
+              position={[0.5, 0.4, 0]}
+              scale={[0.4, 0.4, 0.4]}
+              rotation={[12.6, -0.5, 0]}
+            />
+          </Suspense>
+        </Canvas>
       </div>
     </section>
   );
