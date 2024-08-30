@@ -51,11 +51,13 @@ const Island = ({ isRotation, setIsRotation, setCurrentStage, ...props }) => {
       if (!isRotation) {
         setIsRotation(true);
         islandRef.current.rotation.y += 0.01 * Math.PI;
+        rotationSpeed.current = 0.015 * Math.PI;
       }
     } else if (e.key === "ArrowLeft") {
       if (!isRotation) {
         setIsRotation(true);
         islandRef.current.rotation.y -= 0.01 * Math.PI;
+        rotationSpeed.current = -0.015 * Math.PI;
       }
     }
   };
@@ -71,9 +73,10 @@ const Island = ({ isRotation, setIsRotation, setCurrentStage, ...props }) => {
     setIsRotation(false);
     const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const delta = (clientX - lastX.current) / viewport.width;
-    islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+    islandRef.current.rotation.y += delta * 0.015 * Math.PI;
     lastX.current = clientX;
-    rotationSpeed.current = delta * 0.01 * Math.PI;
+    rotationSpeed.current = 0.0125 * Math.PI;
+    // rotationSpeed.current = delta * 0.0125 * Math.PI;
   };
   const handleTouchStart = (e) => {
     e.stopPropagation();
