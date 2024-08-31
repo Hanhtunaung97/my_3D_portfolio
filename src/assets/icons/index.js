@@ -33,8 +33,12 @@ import laravel from "./laravel.svg";
 import shadcn from "./shadcn.svg";
 import vite from "./vite.svg";
 import zustand from './zustand.svg';
+import whatsapp from './whatsapp.svg';
+import facebook from './facebook.svg';
 
 export {
+    facebook,
+    whatsapp,
     vite,
     zustand,
     shadcn,

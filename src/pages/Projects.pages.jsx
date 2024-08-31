@@ -3,6 +3,7 @@ import { projects } from "../constants";
 import { Link } from "react-router-dom";
 import { arrow } from "../assets/icons";
 import { CTAComponents } from "../components";
+import FooterComponents from "../components/Footer.components";
 
 const ProjectsPages = () => {
   return (
@@ -45,6 +46,7 @@ const ProjectsPages = () => {
       </div>
       <hr className=" border-slate-200" />
       <CTAComponents/>
+      <FooterComponents/>
     </section>
   );
 };

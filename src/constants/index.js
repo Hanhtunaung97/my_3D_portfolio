@@ -31,6 +31,8 @@ import {
   shadcn,
   vite,
   zustand,
+  whatsapp,
+  facebook,
 } from "../assets/icons";
 
 export const skills = [
@@ -215,12 +217,22 @@ export const socialLinks = [
   {
     name: "GitHub",
     iconUrl: github,
-    link: "https://github.com/YourGitHubUsername",
+    link: "https://github.com/Hanhtunaung97",
   },
   {
     name: "LinkedIn",
     iconUrl: linkedin,
-    link: "https://www.linkedin.com/in/YourLinkedInUsername",
+    link: "https://www.linkedin.com/in/han-htunaung-7720a526a/",
+  },
+  {
+    name: "Facebook",
+    iconUrl: facebook,
+    link: "https://www.facebook.com/profile.php?id=100004888456380&mibextid=LQQJ4d",
+  },
+  {
+    name: "WhatsApp",
+    iconUrl: whatsapp,
+    link: "whatsapp://send?text=Hello&phone=+601123858843",
   },
 ];
 

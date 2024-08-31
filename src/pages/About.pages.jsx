@@ -6,6 +6,7 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { experiences, skills } from "../constants";
 import { CTAComponents } from "../components";
+import FooterComponents from "../components/Footer.components";
 
 const AboutPages = () => {
   return (
@@ -102,6 +103,7 @@ const AboutPages = () => {
       </div>
       <hr className="border-slate-200" />
       <CTAComponents/>
+      <FooterComponents/>
     </section>
   );
 };
