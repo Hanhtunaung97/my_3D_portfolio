@@ -74,11 +74,11 @@ export const skills = [
     name: "JavaScript",
     type: "Frontend",
   },
-//   {
-//     imageUrl: mongodb,
-//     name: "MongoDB",
-//     type: "Database",
-//   },
+  //   {
+  //     imageUrl: mongodb,
+  //     name: "MongoDB",
+  //     type: "Database",
+  //   },
   {
     imageUrl: pgsql,
     name: "PgSQL",
@@ -89,11 +89,11 @@ export const skills = [
     name: "Motion",
     type: "Animation",
   },
-//   {
-//     imageUrl: mui,
-//     name: "Material-UI",
-//     type: "Frontend",
-//   },
+  //   {
+  //     imageUrl: mui,
+  //     name: "Material-UI",
+  //     type: "Frontend",
+  //   },
   {
     imageUrl: vite,
     name: "Vite",
