@@ -68,7 +68,7 @@ const ContactPages = () => {
       });
   };
   return (
-    <section className="flex flex-col lg:flex-row max-container relative">
+    <section className="flex flex-col lg:flex-row max-container relative h-screen">
       {alert.show && <AlertComponents {...alert} />}
       {/* <AlertComponents text={"Your message has been sent successfully. Thank you for contacting me!"} /> */}
       <div className="flex flex-col flex-1  min-w-[50%]">
