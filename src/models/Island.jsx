@@ -48,17 +48,13 @@ const Island = ({ isRotation, setIsRotation, setCurrentStage, ...props }) => {
   };
   const handleKeyDown = (e) => {
     if (e.key === "ArrowRight") {
-      if (!isRotation) {
-        setIsRotation(true);
-        islandRef.current.rotation.y += 0.01 * Math.PI;
-        rotationSpeed.current = 0.015 * Math.PI;
-      }
+      if (!isRotation) setIsRotation(true);
+      islandRef.current.rotation.y += 0.01 * Math.PI;
+      rotationSpeed.current = 0.015 * Math.PI;
     } else if (e.key === "ArrowLeft") {
-      if (!isRotation) {
-        setIsRotation(true);
-        islandRef.current.rotation.y -= 0.01 * Math.PI;
-        rotationSpeed.current = -0.015 * Math.PI;
-      }
+      if (!isRotation) setIsRotation(true);
+      islandRef.current.rotation.y -= 0.01 * Math.PI;
+      rotationSpeed.current = -0.015 * Math.PI;
     }
   };
   const handleKeyUp = (e) => {
@@ -159,7 +155,18 @@ const Island = ({ isRotation, setIsRotation, setCurrentStage, ...props }) => {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
     };
-  }, [gl, handlePointerDown, handlePointerUp, handlePointerMove]);
+  }, [
+    gl,
+    handlePointerDown,
+    handlePointerUp,
+    handlePointerMove,
+    handleMouseWheel,
+    handleTouchStart,
+    handleTouchEnd,
+    handleTouchMove,
+    handleKeyDown,
+    handleKeyUp,
+  ]);
   return (
     <a.group {...props} ref={islandRef}>
       <mesh
