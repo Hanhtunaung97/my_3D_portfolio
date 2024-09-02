@@ -14,9 +14,10 @@ const HomePages = () => {
   useEffect(() => {
     if (isSoundOn) {
       audioRef.current.play();
-    } else {
-      audioRef.current.pause();
     }
+    return () => {
+      audioRef.current.pause();
+    };
   }, [isSoundOn]);
   const adjustIslandScreenSize = () => {
     let screenScale = null;

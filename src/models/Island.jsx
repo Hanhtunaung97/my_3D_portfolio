@@ -50,11 +50,11 @@ const Island = ({ isRotation, setIsRotation, setCurrentStage, ...props }) => {
     if (e.key === "ArrowRight") {
       if (!isRotation) setIsRotation(true);
       islandRef.current.rotation.y += 0.01 * Math.PI;
-      rotationSpeed.current = 0.015 * Math.PI;
+      rotationSpeed.current = 0.0125 ;
     } else if (e.key === "ArrowLeft") {
       if (!isRotation) setIsRotation(true);
       islandRef.current.rotation.y -= 0.01 * Math.PI;
-      rotationSpeed.current = -0.015 * Math.PI;
+      rotationSpeed.current = -0.0125 ;
     }
   };
   const handleKeyUp = (e) => {
