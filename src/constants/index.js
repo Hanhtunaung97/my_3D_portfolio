@@ -33,6 +33,9 @@ import {
   zustand,
   whatsapp,
   facebook,
+  webDevelopment,
+  university,
+  udemy,
 } from "../assets/icons";
 
 export const skills = [
@@ -284,5 +287,28 @@ export const projects = [
     description:
       "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
     link: "https://github.com/adrianhajdin/project_ai_summarizer",
+  },
+];
+export const educations = [
+  {
+    iconUrl: university,
+    title: "Computer Science",
+    camp_name: "Computer University Mandalay",
+    iconBg: "#fcb1b1",
+    date: "May 20214 - Feb 2019",
+  },
+  {
+    iconUrl: webDevelopment,
+    title: "Front-End Web Development Bootcamp",
+    camp_name: "MMS-IT Solution LTD",
+    iconBg: "#96f7d2",
+    date: "March 2023 - April 2024",
+  },
+  {
+    iconUrl: udemy,
+    title: "Full Stack Web Development Bootcamp",
+    camp_name: "UDEMY Academy",
+    iconBg: "#cabbe9",
+    date: "May 2023 - August 2024",
   },
 ];

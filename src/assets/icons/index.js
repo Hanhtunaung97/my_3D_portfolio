@@ -35,8 +35,14 @@ import vite from "./vite.svg";
 import zustand from './zustand.svg';
 import whatsapp from './whatsapp.svg';
 import facebook from './facebook.svg';
+import webDevelopment from "./webDevelopment.svg";
+import university from './university.svg';
+import udemy from './udemy.svg';
 
 export {
+    udemy,
+    university,
+    webDevelopment,
     facebook,
     whatsapp,
     vite,

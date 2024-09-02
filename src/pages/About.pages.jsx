@@ -4,7 +4,7 @@ import {
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import { experiences, skills } from "../constants";
+import { educations, experiences, skills } from "../constants";
 import { CTAComponents } from "../components";
 import FooterComponents from "../components/Footer.components";
 
@@ -42,6 +42,63 @@ const AboutPages = () => {
             </div>
           ))}
         </div>
+        {/* Education */}
+        <div className="py-16">
+          <h3 className="subhead-text">My Education</h3>
+          <div className="mt-5 flex flex-col gap-3 text-slate-500">
+            <p>
+              {" "}
+              I have learned my solid computer science knowledge background at{" "}
+              <span className="italic">Computer University Mandalay</span> and
+              level up my web development skills by learning and building web
+              applications with UDEMY Academy's{" "}
+              <span className="italic">
+                Complete Web Development BootCamp Courses by Dr.Angela Yu
+              </span>
+              . Additionally, I trained my Front-End web development skills with{" "}
+              <span className="italic">MMS-IT Solution LTD</span>.
+            </p>
+          </div>
+          <div className=" flex mt-12">
+            <VerticalTimeline>
+              {educations.map((education) => (
+                <VerticalTimelineElement
+                  key={education.title}
+                  date={education.date}
+                  dateClassName="text-slate-500"
+                  icon={
+                    <div className="flex justify-center btn-front items-center w-full h-full">
+                      <img
+                        src={education.iconUrl}
+                        alt={education.camp_name}
+                        className="w-[60%] h-[60%] object-contain"
+                      />
+                    </div>
+                  }
+                  contentStyle={{
+                    borderBottom: "8px",
+                    borderStyle: "solid",
+                    boxShadow: "none",
+                    borderBottomColor: education.iconBg,
+                  }}
+                  iconStyle={{ backgroundColor: education.iconBg }}
+                >
+                  <div>
+                    <h3 className="text-xl text-black font-heading font-semibold">
+                      {education.title}
+                    </h3>
+                    <p
+                      style={{ margin: 0 }}
+                      className=" font-medium text-base text-slate-500"
+                    >
+                      {education.camp_name}
+                    </p>
+                  </div>
+                </VerticalTimelineElement>
+              ))}
+            </VerticalTimeline>
+          </div>
+        </div>
         {/* work experience */}
         <div className="py-16">
           <h3 className="subhead-text">My Experience</h3>
@@ -72,7 +129,7 @@ const AboutPages = () => {
                     boxShadow: "none",
                     borderBottomColor: experience.iconBg,
                   }}
-                  iconStyle={{backgroundColor:experience.iconBg}}
+                  iconStyle={{ backgroundColor: experience.iconBg }}
                 >
                   <div>
                     <h3 className="text-xl text-black font-heading font-semibold">
@@ -102,8 +159,8 @@ const AboutPages = () => {
         </div>
       </div>
       <hr className="border-slate-200" />
-      <CTAComponents/>
-      <FooterComponents/>
+      <CTAComponents />
+      <FooterComponents />
     </section>
   );
 };
