@@ -55,7 +55,8 @@ const ContactPages = () => {
             email: "",
             message: "",
           });
-        }, 3000);
+          hideAlert();
+        }, 2000);
       })
       .catch((e) => {
         setIsSent(false);

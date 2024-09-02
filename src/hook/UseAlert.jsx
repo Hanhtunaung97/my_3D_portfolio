@@ -6,12 +6,12 @@ const UseAlert = () => {
     text: "",
     type: "danger",
   });
-  const showAlert = (text, type = "danger") => {
+  const showAlert = ({ text, type = "danger" }) => {
     setAlert({ show: true, text, type });
-  }
-  const hideAlert=()=>{
+  };
+  const hideAlert = () => {
     setAlert({ show: false, text: "", type: "danger" });
-  }
+  };
   return { alert, showAlert, hideAlert };
 };
 

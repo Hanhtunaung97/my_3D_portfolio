@@ -14,7 +14,7 @@ const Fox = ({ currentAnimation, ...props }) => {
   const { nodes, materials, animations } = useGLTF(foxScene);
   const { actions } = useAnimations(animations, group);
   useEffect(() => {
-    console.log(actions);
+    // console.log(actions);
     Object.values(actions).forEach((action) => action.stop());
     if (currentAnimation) actions[currentAnimation].play();
   }, [actions, currentAnimation]);
