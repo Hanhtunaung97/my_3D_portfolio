@@ -38,8 +38,19 @@ import facebook from './facebook.svg';
 import webDevelopment from "./webDevelopment.svg";
 import university from './university.svg';
 import udemy from './udemy.svg';
-
+import mysql from './mysql.svg';
+import contactBook from './contactBook.svg';
+import apple from './apple.svg';
+import restaurant from './restaurant.svg';
+import shopping from './shopping.svg';
+import todo from './todo.svg';
 export {
+    todo,
+    shopping,
+    apple,
+    restaurant,
+    contactBook,
+    mysql,
     udemy,
     university,
     webDevelopment,

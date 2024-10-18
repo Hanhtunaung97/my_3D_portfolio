@@ -1,5 +1,8 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+import { meta, shopify, starbucks, tesla,mms } from "../assets/images";
 import {
+  todo,
+  shopping,
+  apple,
   car,
   contact,
   css,
@@ -36,17 +39,80 @@ import {
   webDevelopment,
   university,
   udemy,
+  mysql,
+  contactBook,
+  restaurant,
 } from "../assets/icons";
 
 export const skills = [
+  {
+    imageUrl: html,
+    name: "HTML",
+    type: "Frontend",
+  },
   {
     imageUrl: css,
     name: "CSS",
     type: "Frontend",
   },
   {
+    imageUrl: javascript,
+    name: "JavaScript",
+    type: "Frontend",
+  },
+  {
+    imageUrl: typescript,
+    name: "TypeScript",
+    type: "Frontend",
+  },
+  {
+    imageUrl: sass,
+    name: "Sass",
+    type: "Frontend",
+  },
+  {
+    imageUrl: tailwindcss,
+    name: "Tailwind CSS",
+    type: "Frontend",
+  },
+  {
+    imageUrl: bootstrap,
+    name: "Bootstrap CSS",
+    type: "Frontend",
+  },
+  {
+    imageUrl: shadcn,
+    name: "ShadCN-UI",
+    type: "Frontend",
+  },
+  {
+    imageUrl: nextjs,
+    name: "Next.js",
+    type: "Frontend",
+  },
+  {
+    imageUrl: react,
+    name: "React",
+    type: "Frontend",
+  },
+  {
+    imageUrl: redux,
+    name: "Redux",
+    type: "State Management",
+  },
+  {
+    imageUrl: zustand,
+    name: "Zustand",
+    type: "State Management",
+  },
+  {
     imageUrl: express,
     name: "Express",
+    type: "Backend",
+  },
+  {
+    imageUrl: nodejs,
+    name: "Node.js",
     type: "Backend",
   },
   {
@@ -69,16 +135,6 @@ export const skills = [
     name: "GitHub",
     type: "Version Control",
   },
-  {
-    imageUrl: html,
-    name: "HTML",
-    type: "Frontend",
-  },
-  {
-    imageUrl: javascript,
-    name: "JavaScript",
-    type: "Frontend",
-  },
   //   {
   //     imageUrl: mongodb,
   //     name: "MongoDB",
@@ -87,6 +143,11 @@ export const skills = [
   {
     imageUrl: pgsql,
     name: "PgSQL",
+    type: "Database",
+  },
+  {
+    imageUrl: mysql,
+    name: "MySQL",
     type: "Database",
   },
   {
@@ -104,65 +165,15 @@ export const skills = [
     name: "Vite",
     type: "JS build Tool",
   },
-  {
-    imageUrl: shadcn,
-    name: "ShadCN-UI",
-    type: "Frontend",
-  },
-  {
-    imageUrl: nextjs,
-    name: "Next.js",
-    type: "Frontend",
-  },
-  {
-    imageUrl: nodejs,
-    name: "Node.js",
-    type: "Backend",
-  },
-  {
-    imageUrl: react,
-    name: "React",
-    type: "Frontend",
-  },
-  {
-    imageUrl: redux,
-    name: "Redux",
-    type: "State Management",
-  },
-  {
-    imageUrl: zustand,
-    name: "Zustand",
-    type: "State Management",
-  },
-  {
-    imageUrl: sass,
-    name: "Sass",
-    type: "Frontend",
-  },
-  {
-    imageUrl: tailwindcss,
-    name: "Tailwind CSS",
-    type: "Frontend",
-  },
-  {
-    imageUrl: bootstrap,
-    name: "Bootstrap CSS",
-    type: "Frontend",
-  },
-  {
-    imageUrl: typescript,
-    name: "TypeScript",
-    type: "Frontend",
-  },
 ];
 
 export const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
+    title: "Front-End InternShip Web Developer",
+    company_name: "MMS-IT",
+    icon: mms,
     iconBg: "#accbe1",
-    date: "March 2020 - April 2021",
+    date: "March 2023 - August 2024",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -170,45 +181,45 @@ export const experiences = [
       "Participating in code reviews and providing constructive feedback to other developers.",
     ],
   },
-  {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#fbc3bc",
-    date: "Jan 2021 - Feb 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#b7e4c7",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#a2d2ff",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
+  // {
+  //   title: "React Native Developer",
+  //   company_name: "Tesla",
+  //   icon: tesla,
+  //   iconBg: "#fbc3bc",
+  //   date: "Jan 2021 - Feb 2022",
+  //   points: [
+  //     "Developing and maintaining web applications using React.js and other related technologies.",
+  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+  //     "Implementing responsive design and ensuring cross-browser compatibility.",
+  //     "Participating in code reviews and providing constructive feedback to other developers.",
+  //   ],
+  // },
+  // {
+  //   title: "Web Developer",
+  //   company_name: "Shopify",
+  //   icon: shopify,
+  //   iconBg: "#b7e4c7",
+  //   date: "Jan 2022 - Jan 2023",
+  //   points: [
+  //     "Developing and maintaining web applications using React.js and other related technologies.",
+  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+  //     "Implementing responsive design and ensuring cross-browser compatibility.",
+  //     "Participating in code reviews and providing constructive feedback to other developers.",
+  //   ],
+  // },
+  // {
+  //   title: "Full stack Developer",
+  //   company_name: "Meta",
+  //   icon: meta,
+  //   iconBg: "#a2d2ff",
+  //   date: "Jan 2023 - Present",
+  //   points: [
+  //     "Developing and maintaining web applications using React.js and other related technologies.",
+  //     "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+  //     "Implementing responsive design and ensuring cross-browser compatibility.",
+  //     "Participating in code reviews and providing constructive feedback to other developers.",
+  //   ],
+  // },
 ];
 
 export const socialLinks = [
@@ -243,50 +254,50 @@ export const projects = [
   {
     iconUrl: pricewise,
     theme: "btn-back-red",
-    name: "Amazon Price Tracker",
+    name: "Voucher Management Application",
     description:
-      "Developed a web application that tracks and notifies users of price changes for products on Amazon, helping users find the best deals.",
-    link: "https://github.com/adrianhajdin/pricewise",
+      "Developed a web application that can manage products and operate sale voucher.First,authentication and authorization is required to register user.And then,other processes can doable with review voucher list and can review voucher details with printable and downloadable pdf file.",
+    link: "https://github.com/Hanhtunaung97/Voucher-app.git",
   },
   {
-    iconUrl: threads,
+    iconUrl: contactBook,
     theme: "btn-back-green",
-    name: "Full Stack Threads Clone",
+    name: "Contact Management Application",
     description:
-      'Created a full-stack replica of the popular discussion platform "Threads," enabling users to post and engage in threaded conversations.',
-    link: "https://github.com/adrianhajdin/threads",
+      'Created a contact management book that can manage and create people information in details format.Before using the app,authentication and authorization is required to register user-profile and then,other processes can doable with review contact list and can review contact details.',
+    link: "https://github.com/Hanhtunaung97/Contact-app-project.git",
   },
   {
-    iconUrl: car,
+    iconUrl: apple,
     theme: "btn-back-blue",
-    name: "Car Finding App",
+    name: "Apple Website",
     description:
-      "Designed and built a mobile app for finding and comparing cars on the market, streamlining the car-buying process.",
-    link: "https://github.com/adrianhajdin/project_next13_car_showcase",
+      "Designed and built a apple iphone 15 pro website that can perform 3D rendering and smooth animation with GSAP.",
+    link: "https://github.com/Hanhtunaung97/Apple-website.git",
   },
   {
-    iconUrl: snapgram,
+    iconUrl: restaurant,
     theme: "btn-back-pink",
-    name: "Full Stack Instagram Clone",
+    name: "Restaurant Landing Page",
     description:
-      "Built a complete clone of Instagram, allowing users to share photos and connect with friends in a familiar social media environment.",
-    link: "https://github.com/adrianhajdin/social_media_app",
+      "Built a complete restaurant Landing Page with React.js and fully responsive design in across all devices.",
+    link: "https://github.com/Hanhtunaung97/Restaurant-Landing-Page.git",
   },
   {
-    iconUrl: estate,
+    iconUrl: shopping,
     theme: "btn-back-black",
-    name: "Real-Estate Application",
+    name: "Sample E-commerce Application",
     description:
-      "Developed a web application for real estate listings, facilitating property searches and connecting buyers with sellers.",
-    link: "https://github.com/adrianhajdin/projects_realestate",
+      "Developed a web application for e-commerce online shop with vanilla JavaScript,can manage and operate the whole process of online sale in sample process.",
+    link: "https://github.com/Hanhtunaung97/JS-product-card-management-jsonserver.git",
   },
   {
-    iconUrl: summiz,
+    iconUrl: todo,
     theme: "btn-back-yellow",
-    name: "AI Summarizer Application",
+    name: "Todo List Application",
     description:
-      "App that leverages AI to automatically generate concise & informative summaries from lengthy text content, or blogs.",
-    link: "https://github.com/adrianhajdin/project_ai_summarizer",
+      "App that can process of the todo list with creation and updating of todo list.Developing with React.js and implemented with beautiful UI/UX design.",
+    link: "https://github.com/Hanhtunaung97/React-todo-app.git",
   },
 ];
 export const educations = [
@@ -295,18 +306,18 @@ export const educations = [
     title: "Computer Science",
     camp_name: "Computer University Mandalay",
     iconBg: "#fcb1b1",
-    date: "May 20214 - Feb 2019",
+    date: "May 2014 - Feb 2019",
   },
   {
     iconUrl: webDevelopment,
-    title: "Front-End Web Development Bootcamp",
-    camp_name: "MMS-IT Solution LTD",
+    title: "Front-End Web Development",
+    camp_name: "MMS-IT Solution",
     iconBg: "#96f7d2",
-    date: "March 2023 - April 2024",
+    date: "March 2023 - Oct 2024",
   },
   {
     iconUrl: udemy,
-    title: "Full Stack Web Development Bootcamp",
+    title: "Complete Web Development BootCamp",
     camp_name: "UDEMY Academy",
     iconBg: "#cabbe9",
     date: "May 2023 - August 2024",

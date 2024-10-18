@@ -2,10 +2,11 @@ import { Canvas } from "@react-three/fiber";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { HomeInfoComponents, LoaderComponents } from "../components";
 import { Bird, Island, Plane, Sky } from "../models";
-import sakura from "../assets/sakura.mp3";
+// import sakura from "../assets/sakura.mp3";
+import canon from '../assets/canon.mp3';
 import { soundoff, soundon } from "../assets/icons";
 const HomePages = () => {
-  const audioRef = useRef(new Audio(sakura));
+  const audioRef = useRef(new Audio(canon));
   audioRef.current.volume = 0.4;
   audioRef.current.loop = true;
   const [isRotation, setIsRotation] = useState(false);
